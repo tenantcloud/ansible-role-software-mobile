@@ -1,4 +1,4 @@
-tenantcloud.ansible_role_software_dev
+tenantcloud.ansible_role_mobile_dev
 =========
 
 Ansible role for install mobile software. This role include install:
