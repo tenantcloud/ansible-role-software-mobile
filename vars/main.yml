@@ -1,0 +1,6 @@
+---
+# vars file for project_software_mobile_role
+
+work_user: "user"
+work_dir: "work"
+ansible_python_interpreter: "/usr/local/bin/python3"

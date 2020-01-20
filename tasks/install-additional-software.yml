@@ -1,0 +1,20 @@
+---
+- name: Install Applications from Homebrew
+  homebrew:
+    name: '{{ item }}'
+    options: force
+  loop:
+    - ant
+    - maven
+    - gradle
+  become: false
+
+- name: Install Applications from Homebrew Cask
+  homebrew_cask:
+    name: '{{ item }}'
+    options: force
+  loop:
+    - android-studio
+    - android-sdk
+    - android-platform-tools
+  become: false
