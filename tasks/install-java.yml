@@ -6,12 +6,14 @@
 
 - name: Mount the downloaded dmg
   command: hdiutil attach -mountpoint /Volumes/jdk /tmp/jdk-8u212-macosx-x64.dmg
+  tags: monit,skip_ansible_lint
 
 - name: Install the pkg file from the dmg
   become: true
   become_method: sudo
   command: installer -package /Volumes/jdk/JDK\ 8\ Update\ 212.pkg -target /
+  tags: monit,skip_ansible_lint
 
 - name: Unmount the downloaded dmg
   command: hdiutil detach /Volumes/jdk
-
+  tags: monit,skip_ansible_lint

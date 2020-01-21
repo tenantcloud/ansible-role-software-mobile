@@ -1,3 +1,4 @@
 ---
-- homebrew_tap:
-    name: homebrew/cask-versions
+- name: Homebrew tap
+  homebrew_tap:
+      name: homebrew/cask-versions

@@ -1,0 +1,13 @@
+---
+- name: Copy npm script
+  template: src=setup_npm_cordova.sh dest=/Users/{{ work_user }}/{{ work_dir }} mode=0777
+
+- name: Run npm script
+  command: sh /Users/{{ work_user }}/{{ work_dir }}/setup_npm_cordova.sh
+  tags: monit,skip_ansible_lint
+
+- name: Install cocoapods
+  become: true
+  become_method: sudo
+  command: gem install cocoapods
+  tags: monit,skip_ansible_lint

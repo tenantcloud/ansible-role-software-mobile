@@ -4,4 +4,4 @@
     path: /Users/{{ work_user }}/{{ work_dir }}
     state: directory
     mode: 0777
-  become: no
+  become: true
