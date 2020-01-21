@@ -3,4 +3,4 @@
 - include: create-work-folder.yml
 - include: install-additional-software.yml
 - include: install-java.yml
-- include: install-npm.yml
+- include: install-cordova.yml

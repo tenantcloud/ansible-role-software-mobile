@@ -14,6 +14,8 @@ Ansible role for install mobile software. This role include install:
 Requirements
 ------------
 
+Install tenantcloud.ansible_role_software_dev
+
 Role Variables
 --------------
 
