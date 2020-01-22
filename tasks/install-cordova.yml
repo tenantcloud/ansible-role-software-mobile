@@ -1,13 +1,19 @@
 ---
-- name: Copy npm script
-  template: src=setup_npm_cordova.sh dest=/Users/{{ work_user }}/{{ work_dir }} mode=0777
+- name: Install "cordova" package globally.
+  npm:
+    name: cordova@8
+    global: true
+  environment:
+    PATH: "/Users/{{ work_user }}/.nvm/versions/node/{{ node_version }}/bin/"
 
-- name: Run npm script
-  command: sh /Users/{{ work_user }}/{{ work_dir }}/setup_npm_cordova.sh
-  tags: monit,skip_ansible_lint
+- name: Build sdkmanager
+  shell: >
+    set -o pipefail echo -ne 'y\n' | PATH="$PATH:/usr/local/bin"
+    sdkmanager "build-tools;{{ sdk_buildtools_version }}"
+  changed_when: false
 
 - name: Install cocoapods
   become: true
   become_method: sudo
   command: gem install cocoapods
-  tags: monit,skip_ansible_lint
+  changed_when: false
