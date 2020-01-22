@@ -37,15 +37,6 @@ Example Playbook
       become: no
       vars:
         work_user: "user"
-        work_dir: "work"
-        ansible_python_interpreter: "/usr/local/bin/python3"
-        node_version: "v10.18.1"
-        java_version: "8"
-        java_build_version: "b10"
-        java_release: "212"
-        java_name: "jdk-8u212-macosx-x64"
-        java_url: "https://github.com/frekele/oracle-java/releases/download/{{ java_version }}u{{ java_release }}-{{ java_build_version }}/{{ java_name }}.dmg"
-        sdk_buildtools_version: "27.0.3"
       roles:
         - tenantcloud.ansible_role_software_mobile
 
