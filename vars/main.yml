@@ -1,8 +1,7 @@
 ---
-# vars file for project_software_mobile_role
+# vars file for tenantcloud.ansible_role_software_mobile
 
 work_user: "user"
-work_dir: "work"
 ansible_python_interpreter: "/usr/local/bin/python3"
 node_version: "v10.18.1"
 java_version: "8"
