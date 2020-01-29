@@ -1,4 +1,4 @@
-tenantcloud.ansible_role_mobile_dev
+tenantcloud.ansible_role_software_mobile
 =========
 
 Ansible role for install mobile software. This role include install:
@@ -21,7 +21,6 @@ Role Variables
 --------------
 
 work_user: "user" os username
-work_dir: "work" os work directory
 
 Dependencies
 ------------
