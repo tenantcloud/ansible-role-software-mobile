@@ -17,3 +17,7 @@
   become_method: sudo
   command: gem install cocoapods
   changed_when: false
+
+- name: Copy info file
+  become: true
+  template: src=info.txt.j2 dest=/Users/{{ work_user }}/Desktop/mobile_software.txt
