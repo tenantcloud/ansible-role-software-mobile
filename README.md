@@ -21,6 +21,12 @@ Role Variables
 --------------
 
 work_user: "user" os username
+java_version:
+java_build_version:
+java_release:
+java_name:
+java_url:
+sdk_buildtools_version:
 
 Dependencies
 ------------
