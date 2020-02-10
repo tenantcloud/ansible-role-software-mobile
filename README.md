@@ -27,6 +27,7 @@ java_release:
 java_name:
 java_url:
 sdk_buildtools_version:
+nvm_node_version:
 
 Dependencies
 ------------

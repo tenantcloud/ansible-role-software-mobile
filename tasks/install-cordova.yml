@@ -6,6 +6,12 @@
   environment:
     PATH: "{{ lookup('env','PATH') }}"
 
+- name: Create a symbolic link to cordova
+  file:
+    src: /Users/{{ work_user }}/.nvm/versions/node/{{ nvm_node_version }}/bin/cordova
+    dest: /usr/local/bin/cordova
+    state: link
+
 - name: Build sdkmanager
   shell: |
     set -o pipefail
