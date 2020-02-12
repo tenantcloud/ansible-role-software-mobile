@@ -1,5 +1,6 @@
 ---
 galaxy_info:
+  role_name: software-mobile
   author: Oleh Debretseni
   description: install mobile sotware
   company: "TenantCloud LLC"
