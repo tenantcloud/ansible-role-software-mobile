@@ -44,7 +44,7 @@ Example Playbook
       vars:
         work_user: "user"
       roles:
-        - tenantcloud.ansible_role_software_mobile
+        - tenantcloud.software_mobile
 
 License
 -------
