@@ -1,5 +1,5 @@
 ---
-# vars file for tenantcloud.ansible_role_software_mobile
+# vars file for tenantcloud.software_mobile
 
 ansible_python_interpreter: "/usr/local/bin/python3"
 java_version: "8"
