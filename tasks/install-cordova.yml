@@ -8,7 +8,7 @@
 
 - name: Create a symbolic link to cordova
   file:
-    src: /Users/{{ work_user }}/.nvm/versions/node/{{ nvm_node_version }}/bin/cordova
+    src: $HOME/.nvm/versions/node/{{ nvm_node_version }}/bin/cordova
     dest: /usr/local/bin/cordova
     state: link
 
@@ -25,5 +25,4 @@
   changed_when: false
 
 - name: Copy info file
-  become: true
-  template: src=info.txt.j2 dest=/Users/{{ work_user }}/Desktop/mobile_software.txt
+  template: src=info.txt.j2 dest=$HOME/Desktop/mobile_software.txt
