@@ -20,7 +20,7 @@ Install tenantcloud.software_dev
 Role Variables
 --------------
 
-work_user: "user" os username
+ansible_user: "user" os username
 java_version:
 java_build_version:
 java_release:
@@ -42,7 +42,7 @@ Example Playbook
     - hosts: localhost
       become: no
       vars:
-        work_user: "user"
+        ansible_user: "user"
       roles:
         - tenantcloud.software_mobile
 
