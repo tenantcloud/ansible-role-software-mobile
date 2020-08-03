@@ -7,9 +7,9 @@
     PATH: "{{ lookup('env','PATH') }}"
 
 - name: Check node versions
-  shell: node -v
-  environment:
-    PATH: "{{ lookup('env','PATH') }}"
+  shell: . $HOME/.zshrc && node -v
+  args:
+    executable: /bin/zsh
   register: node_v
 
 - name: Set node versions to fact
@@ -31,8 +31,10 @@
 - name: Install cocoapods
   become: true
   become_method: sudo
-  command: gem install cocoapods
-  changed_when: false
+  gem:
+    name: cocoapods
+    version: {{ cocoapods_version }}
+    state: present
 
 - name: Copy info file
   template: src=info.txt.j2 dest=$HOME/Desktop/mobile_software.txt
