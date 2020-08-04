@@ -11,6 +11,7 @@ Ansible role for install mobile software. This role include install:
   - android-platform-tools
   - cordova@8
   - java@8
+  - cocoapods
 
 Requirements
 ------------
@@ -27,7 +28,7 @@ java_release:
 java_name:
 java_url:
 sdk_buildtools_version:
-nvm_node_version:
+cocoapods_version:
 
 Dependencies
 ------------
