@@ -11,6 +11,7 @@
   args:
     executable: /bin/zsh
   register: node_v
+  changed_when: false
 
 - name: Set node versions to fact
   set_fact:
@@ -28,13 +29,31 @@
     echo -ne 'y\n' | PATH="$PATH:/usr/local/bin" sdkmanager "build-tools;{{ sdk_buildtools_version }}"
   changed_when: false
 
+- name: Set export vars for ruby
+  blockinfile:
+    path: ~/.zshrc
+    block: |
+      export PATH="/usr/local/opt/ruby/bin:$PATH"
+      export LDFLAGS="-L/usr/local/opt/ruby/lib"
+      export CPPFLAGS="-I/usr/local/opt/ruby/include"
+      export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
+
+- name: Source zshrc
+  become: false
+  command: /bin/zsh -c "source ~/.zshrc"
+  changed_when: false
+
+- name: Set home_dir to fact
+  set_fact:
+    user_home_dir: "{{ ansible_env.HOME }}"
+
 - name: Install cocoapods
   become: true
   become_method: sudo
-  gem:
-    name: cocoapods
-    version: {{ cocoapods_version }}
-    state: present
+  shell: . "{{ user_home_dir }}"/.zshrc && gem install -n /usr/local/bin cocoapods
+  args:
+    executable: /bin/zsh
+  changed_when: false
 
 - name: Copy info file
   template: src=info.txt.j2 dest=$HOME/Desktop/mobile_software.txt
