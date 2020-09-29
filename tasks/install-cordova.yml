@@ -22,11 +22,13 @@
     src: $HOME/.nvm/versions/node/{{ nvm_node_version }}/bin/cordova
     dest: /usr/local/bin/cordova
     state: link
+    mode: 0777
 
 - name: Build sdkmanager
   shell: |
     set -o pipefail
-    echo -ne 'y\n' | PATH="$PATH:/usr/local/bin" sdkmanager "build-tools;{{ sdk_buildtools_version }}"
+    echo -ne 'y\n' |
+    PATH="$PATH:/usr/local/bin" sdkmanager "{{ sdk_buildtools_version }}"
   changed_when: false
 
 - name: Set export vars for ruby
@@ -50,10 +52,11 @@
 - name: Install cocoapods
   become: true
   become_method: sudo
-  shell: . "{{ user_home_dir }}"/.zshrc && gem install -n /usr/local/bin cocoapods
+  shell: . "{{ user_home_dir }}"/.zshrc
+    && gem install -n /usr/local/bin cocoapods
   args:
     executable: /bin/zsh
   changed_when: false
 
 - name: Copy info file
-  template: src=info.txt.j2 dest=$HOME/Desktop/mobile_software.txt
+  template: src=info.txt.j2 dest=$HOME/Desktop/mobile_software.txt mode="0777"
