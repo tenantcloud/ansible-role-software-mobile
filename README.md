@@ -1,3 +1,7 @@
+
+<br><img src="https://github.com/tenantcloud/ansible-role-software-mobile/workflows/Ansible Lint/badge.svg?branch-master"><br>
+<br><img src="https://github.com/tenantcloud/ansible-role-software-mobile/workflows/Yaml Lint/badge.svg?branch-master"><br>
+
 tenantcloud.software_mobile
 =========
 
