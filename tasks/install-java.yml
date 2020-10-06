@@ -11,7 +11,8 @@
 - name: Install the pkg file from the dmg
   become: true
   become_method: sudo
-  command: installer -package /Volumes/jdk/JDK\ {{ java_version }}\ Update\ {{ java_release }}.pkg -target /
+  command: installer -package /Volumes/jdk/JDK\
+    {{ java_version }}\ Update\ {{ java_release }}.pkg -target /
   changed_when: false
 
 - name: Unmount the downloaded dmg

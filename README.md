@@ -1,3 +1,7 @@
+
+![Ansible Lint](https://github.com/tenantcloud/ansible-role-software-mobile/workflows/Ansible%20Lint/badge.svg?branch-master)
+![Yaml Lint](https://github.com/tenantcloud/ansible-role-software-mobile/workflows/Yaml%20Lint/badge.svg?branch-master)
+
 tenantcloud.software_mobile
 =========
 
@@ -40,12 +44,14 @@ Dependencies
 Example Playbook
 ----------------
 
-    - hosts: localhost
-      become: no
-      vars:
-        ansible_user: "user"
-      roles:
-        - tenantcloud.software_mobile
+```yaml
+- hosts: localhost
+  become: no
+  vars:
+    ansible_user: "user"
+  roles:
+    - tenantcloud.software_mobile
+```
 
 License
 -------
