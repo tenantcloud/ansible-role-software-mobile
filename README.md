@@ -1,6 +1,5 @@
 
-![Ansible Lint](https://github.com/tenantcloud/ansible-role-software-mobile/workflows/Ansible%20Lint/badge.svg?branch-master)
-![Yaml Lint](https://github.com/tenantcloud/ansible-role-software-mobile/workflows/Yaml%20Lint/badge.svg?branch-master)
+![Ansible Lint](https://github.com/tenantcloud/ansible-role-software-mobile/workflows/Lint%20Ansible%20Roles/badge.svg?branch-master)
 
 tenantcloud.software_mobile
 =========
