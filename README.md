@@ -21,6 +21,7 @@ Requirements
 ------------
 
 Install tenantcloud.software_dev
+Install nvm node@12 and set default version
 
 Role Variables
 --------------
